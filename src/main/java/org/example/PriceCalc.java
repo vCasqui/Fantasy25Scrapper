@@ -74,7 +74,7 @@ public class PriceCalc {
 
         double poor = 0.6;
         double good = 0.9;
-        double excelent = 1.2;
+        double excellent = 1.2;
 
         double currentValue = piloto.getValue();
 
@@ -88,19 +88,19 @@ public class PriceCalc {
         double nextRacePPM = pointStart / currentValue;
 
         PPM[2] = nextRacePPM;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 0.6){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < poor){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
         }
         pointsToPoor = pointStart;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 0.9){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < good){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
         }
         pointsToGood = pointStart;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 1.2){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < excellent){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
