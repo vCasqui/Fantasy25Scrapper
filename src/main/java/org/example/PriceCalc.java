@@ -1,7 +1,6 @@
 package org.example;
 
 import java.util.ArrayList;
-import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.regex.Matcher;
@@ -88,19 +87,19 @@ public class PriceCalc {
         double nextRacePPM = pointStart / currentValue;
 
         PPM[2] = nextRacePPM;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 0.6){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < poor){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
         }
         pointsToPoor = pointStart;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 0.9){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < good){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
         }
         pointsToGood = pointStart;
-        while( (PPM[0] + PPM[1] + PPM[2])/3 < 1.2){
+        while( (PPM[0] + PPM[1] + PPM[2])/3 < excelent){
             pointStart++;
             nextRacePPM = pointStart / currentValue;
             PPM[2] = nextRacePPM;
